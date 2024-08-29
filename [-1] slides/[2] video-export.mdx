@@ -1,0 +1,79 @@
+---
+title: 'Video Export'
+description: 'Learn how you can export your Slides as a Video or GIF with smooth animations.'
+---
+
+# Video Export
+
+In the previous sections of our documentation we learned how to create and animate Slides in snappify.
+
+Now let's take a look on how we can export our Slides as a Video or GIF with all the available export options.
+
+## Prerequisites
+
+The Video Export feature is only available in the snappify Desktop App. Choose your OS to download the latest version:
+
+<Flex
+  textAlign="center"
+  justify="center"
+  columnGap={5}
+  rowGap={4}
+  flexWrap="wrap"
+  maxW="400px"
+  mx="auto"
+>
+  <DownloadMacosButton />
+  <DownloadWindowsButton />
+  <DownloadLinuxButton />
+</Flex>
+
+On the free plan your exported videos will have a watermark. You can remove the watermark by upgrading to a paid plan.
+
+## Options
+
+<Box maxW="650px" mx="auto">
+  <NextImage
+    src="/images/docs/slides/video-export-modal2.webp"
+    width={1512}
+    height={1034}
+    alt="Screenshot of the Video Export modal."
+    hideCaption
+  />
+</Box>
+
+You have the following options when exporting your Slides as a Video:
+
+### Scale
+
+The scale option allows you to export your Slides in different resolutions. The higher the scale, the better the quality of the exported video.
+
+### Frame rate
+
+It's possible to choose betwen 30 and 60 frames per second. 60 fps is currently restricted for users on the Professional / Team plan.
+
+### Seconds per Slide
+
+This option allows you to set the duration of each Slide in seconds. First all the entry animations will be played, then the Slide will be visible for the specified duration.
+
+You can also specify the duration of each Slide individually via the Setting on the right toolbar:
+
+<Box mx="auto" maxW="450px">
+    <NextImage
+        src="/images/changelog/slideduration.webp"
+        width={816}
+        height={568}
+        alt="Screenshot of the Slide Duration setting"
+    />
+</Box>
+
+### On Click Delay
+
+As we have to simulate the click event in the exported video, you can specify how long the delay until the "On Click" animations are being triggered should be.
+
+### Transparent Background
+
+If you enable this option, the background of your exported video will be transparent. This is useful if you want to overlay your exported video on top of another video.
+
+### Loop exported GIFs
+
+You can also export your Slides as a GIF. If you enable this option, the exported GIF will be looped infinitely.

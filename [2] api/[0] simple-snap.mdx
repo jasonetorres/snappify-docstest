@@ -1,0 +1,236 @@
+---
+title: 'Simple Snap API'
+description: 'Learn how to automate the creation of beautiful code screenshots'
+---
+
+# Simple Snap API
+
+Our powerful editor gives you the ability to create beautiful code snippets with ease. But sometimes you might want to create them programmatically. That's why we're building an API around the functionalities of snappify so you're able to automate the process.
+
+We started out with this "Simple Snap" API, where you can pass the code + style settings to our REST endpoint and receive the generated image. Our users leverage this API to e.g. create Twitter Posts automatically or generate beautiful OG Images in their services.
+
+> **Hint 💡**
+>
+> The API is only available to users on our paid plans and if you want to remove the watermark, you have to upgrade at least to the Pro plan. Check our [pricing table](#pricing) for more infos.
+
+## Usage
+
+The API is available at `https://api.snappify.com/snap/simple` as a `POST` call.
+
+You have to send [your API-Key](#account__plan-detail) in the `Authorization` Header.
+
+The configuration has to be sent as a JSON body. Here you can see an example config:
+
+```json:simple-api-config.json
+{
+	"code": "function () {\n  console.log('hello world');\n}",
+	"fileName": "test.js",
+	"language": "JavaScript",
+	"theme": "github-dark-dimmed",
+	"background": "linear-gradient(354deg,  #FF75B5, #FFB86C)",
+	"paddingLeft": 60,
+	"paddingRight": 60,
+	"paddingTop": 40,
+	"paddingBottom": 100,
+	"profileInfo": {
+		"showFullname": true,
+		"showUsername": true,
+		"showAvatar": true,
+		"position": "bottom-center"
+	},
+	"aspectRatio": {
+		"width": 16,
+		"height": 9
+	}
+}
+```
+
+## Config Parameters
+
+<ApiProperty
+  name="code"
+  isRequired
+  type="string"
+  description={
+    <>
+      Pass your code as a string. Line breaks should be passed as <code>\n</code>.
+    </>
+  }
+/>
+
+<ApiProperty
+  name="language"
+  type={API_PROPS.LANGUAGES.map((l) => l.name.toLowerCase())}
+  defaultValue="javascript"
+  description="The programming language which should be used for syntax highlighting."
+/>
+
+<ApiProperty
+  name="theme"
+  type={API_PROPS.THEMES.map((l) => l.name.toLowerCase())}
+  defaultValue={API_PROPS.DEFAULT_THEME_NAME}
+  description="The theme which should be used for syntax highlighting."
+/>
+
+<ApiProperty
+  name="background"
+  type="string"
+  defaultValue="linear-gradient(337deg, #654ea3, #da98b4)"
+  description={
+    <>
+      The desired background color as CSS value. (Also supports <code>transparent</code>)
+    </>
+  }
+/>
+
+<ApiProperty
+  name="codeBackground"
+  type="string"
+  description={
+    <>
+      The desired background color for the code snippet window. If nothing is passed, the default background color of
+      the chosen <code>theme</code> will be used.
+    </>
+  }
+/>
+
+<ApiProperty
+  name="hideBoxShadow"
+  type="boolean"
+  defaultValue={false}
+  description="Enables you to hide the box-shadow of the code window."
+/>
+
+<ApiProperty
+  name="profileInfo"
+  type="object"
+  description={
+    <>
+      Configuration for including your own profile info into the snap. If not specified, no profile info will be shown.
+      You can configure your <Link href="#profile-info">profile info</Link> on the dashboard.
+    </>
+  }
+>
+  <ApiProperty name="showFullname" type="boolean" defaultValue={false} />
+  <ApiProperty name="showUsername" type="boolean" defaultValue={false} />
+  <ApiProperty name="showAvatar" type="boolean" defaultValue={false} />
+  <ApiProperty name="position" type={['bottom-left', 'bottom-center', 'bottom-right']} defaultValue="bottom-left" />
+  <ApiProperty name="scale" type="number" defaultValue={1} />
+</ApiProperty>
+
+<ApiProperty
+  name="fileName"
+  type="string"
+  description={
+    <>The filename which should be shown in the tab of the code snippet window. Leave empty for no tab at all.</>
+  }
+/>
+
+<ApiProperty
+  name="hideTab"
+  type="boolean"
+  description={<>If specified, the whole tab-header of the code snippet window will be hidden.</>}
+  defaultValue={false}
+/>
+
+<ApiProperty
+  name="showLineNumbers"
+  type="boolean"
+  description={<>Enables line numbering in the code snippet.</>}
+  defaultValue={false}
+/>
+<ApiProperty
+  name="firstLineNumber"
+  type="number"
+  description={<>Specifies the first line number to count from.</>}
+  defaultValue={1}
+/>
+
+<ApiProperty
+  name="fontSize"
+  type="number"
+  description={<>You can specify the font size of your code snippet. Can be a value from 8 to 30.</>}
+  defaultValue={14}
+/>
+
+<ApiProperty
+  name="fontLigatures"
+  type="boolean"
+  description={<>Toggles the visibility of font ligatures in your code.</>}
+  defaultValue={true}
+/>
+
+<ApiProperty
+  name="showWatermark"
+  type="boolean"
+  description={
+    <>
+      Toggles the visibility of the snappify watermark.
+      <br />
+      If you're on the personal plan, the watermark will always be shown.
+    </>
+  }
+  defaultValue={false}
+/>
+
+<ApiProperty name="paddingLeft" type="number" defaultValue={0} />
+<ApiProperty name="paddingRight" type="number" defaultValue={0} />
+<ApiProperty name="paddingTop" type="number" defaultValue={0} />
+<ApiProperty name="paddingBottom" type="number" defaultValue={0} />
+
+<ApiProperty
+  name="aspectRatio"
+  type="object"
+  description="Can be passed if the resulting image should keep a specific Aspect Ratio."
+>
+  <ApiProperty
+    name="width"
+    type="number"
+    description={
+      <>
+        Width of the Aspect Ratio (e.g. <code>16</code>).
+      </>
+    }
+  />
+  <ApiProperty
+    name="height"
+    type="number"
+    description={
+      <>
+        Height of the Aspect Ratio (e.g. <code>9</code>).
+      </>
+    }
+  />
+</ApiProperty>
+
+
+<ApiProperty
+  name="highlights"
+  type="object"
+  description={<>Let's you specify various <Link href="/docs/editor/elements/code-editor#code-highlighting">highlights</Link> for each line in your code snippet.</>}
+>
+  <ApiProperty
+    name="1"
+    type="object"
+    description="Highlight Options for the first line. (You can specify highlight options per line)"
+  >
+    <ApiProperty
+      name="opacity"
+      type="number"
+      defaultValue={1}
+      description="The opacity of the line. Must be between 0 and 1."
+    />
+    <ApiProperty
+      name="diff"
+      type={["added", "removed"]}
+      defaultValue="none"
+      description="Let's you visualize added or removed lines, like in a git diff."
+    />
+    <ApiProperty
+      name="filter"
+      type={["blur", "grayscale"]}
+      defaultValue="none"
+      description="Let's you apply a blur or grayscale filter to the line."
+    />
+  </ApiProperty>
+</ApiProperty>

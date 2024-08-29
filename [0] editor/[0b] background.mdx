@@ -1,0 +1,75 @@
+---
+title: 'Background'
+description: 'Learn more about the different configurations for the Background of your snap.'
+---
+
+# Background
+
+When no element is selected, you're able to configure the Background on the right toolbar. Let's have a look at the different configuration options 👇
+
+## Size Mode
+
+You're able to choose between two different Size Modes for the Background:
+
+- **Fixed**: the Background has an absolute width and height, overflowing elements will be cut off
+- **Auto**: the Background will automatically adjust its size to a Code Editor element, we'll explore this option in the next section
+
+For both options you're able to resize the Background directly on the canvas and also [keep the aspect ratio](/docs/editor/basics#keep-aspect-ratio) of the Background size.
+
+<NextImage
+  src="/images/docs/editor/background/size-mode.png"
+  width={300}
+  height={103}
+  alt="Screenshot of the size mode configuration"
+/>
+
+### Auto
+
+Typically, the background of a snap has a fixed size, and elements can be placed on it by dragging them.
+
+However, if you choose the Auto Size Mode, the size of the Background will automatically adjust to the size of the Code Editor element on the canvas. Therefore you can't specify the exact size of the Background, but instead the padding around the Code Editor.
+
+This is especially useful if you want to share a simple code snippet with only one Code Editor and you don't want to adjust the size of the background manually.
+
+<Blockquote type="info">
+  This option is only available if you have exactly one Code Editor element on the root-level of your canvas (not less,
+  not more and also not nested inside a Group).
+</Blockquote>
+
+As soon as you add a new Code Editor to the canvas or change the position of the existing Code Editor (either by dragging, or by modifying X and Y on the toolbar), the Background will switch into Fixed Mode again.
+
+> **Pro Tip 💡**
+>
+> To export the code editor as a standalone image, you can set the Background to Auto Size, clear its Color and set the padding to None. This will make only the code editor visible.
+
+## Presets
+
+Choose from a variety of Presets to easily change the size of your snap to the desired format of well-known social media platforms like Twitter, LinkedIn, Instagram, or YouTube.
+
+When you choose a preset, the background will enable to [keep the aspect ratio](/docs/editor/basics#keep-aspect-ratio), so you can resize it and still keep the desired format. You can toggle off the aspect ratio flag at any time.
+
+## Fill
+
+You can choose a background color and/or image. If you choose an image, it will always be displayed on top of the color, but you're also able to choose a (semi-)transparent image which will blend together with the color.
+
+If you clear both the color and the image, you'll have a transparent background.
+
+<NextImage
+  src="/images/docs/editor/background/fill.png"
+  width={300}
+  height={161}
+  alt="Screenshot of the fill configuration"
+/>
+
+## Apply Style to other Slides
+
+If you're working with multiple Slides and want to apply the same background style to all of them, you can use the "Apply Style to other Slides" button.
+
+This will apply the size, fill, and aspect ratio settings to all other Slides.
+
+<NextImage
+  src="/images/docs/editor/background/applystyle.png"
+  width={300}
+  height={74}
+  alt="Screenshot of the apply style button"
+/>

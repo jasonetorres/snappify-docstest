@@ -1,0 +1,156 @@
+---
+title: 'iframe'
+description: 'Learn how to embed beautiful code snippets on your own website / blog'
+---
+
+# Embed Snaps via an iframe
+
+Snappify gives you the ability to embed your snaps in an interactive way (users can easily copy the code) on basically any website via an iframe.
+
+Some example use cases are:
+
+- A technical blog where you're describing some code
+- Docs where you're showing off code examples
+- Any other website / webapp where you want to show off interactive code snippets 😄
+
+## How to
+
+Click on the "Share" button on the [Editor page](/editor).
+
+<NextImage
+  src="/images/docs/embedding/modal.png"
+  width={1830}
+  height={1082}
+  alt="Screenshot of the Share / Embed modal"
+/>
+
+The embed modal opens up and the iframe Tab is opened by default. There you can see the desired HTML snippet for embedding the snap into your website.
+
+<Box mx="auto" maxW="700px">
+  <NextImage
+    src="/images/docs/embedding/modal-iframe.png"
+    width={1326}
+    height={856}
+    alt="Screenshot of the embed modal for iframe"
+  />
+</Box>
+
+## Embedding options
+
+As you can see there are multiple settings to configure for embedding. Let's learn more about them. 👇
+
+### Responsive Snaps
+
+By default the checkbox for making the embedded snaps responsive is checked. That means that your snap will shrink in size on smaller screens and will be centered on larger screens.
+
+This means that snappify takes care of displaying your snap in an responsive way so that it won't be cut-off on mobile devices. Here you can see is a real example of an responsive embedded snap (will be scaled down on mobile devices):
+
+<div
+  style={{
+    overflow: 'hidden',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    borderRadius: '10px',
+    width: '100%',
+    maxWidth: '530px',
+    position: 'relative',
+  }}
+>
+  <div style={{ width: '100%', paddingBottom: '70%' }} />
+  <LazyIframe
+    width={530}
+    height={371}
+    title="Code snippet - Favicon as PNG"
+    src="/embed/cf512284-fed8-40ec-9305-c5699210d35e?responsive"
+    allow="clipboard-write"
+    style={{
+      background: 'linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)',
+      position: 'absolute',
+      left: 0,
+      top: 0,
+      width: '100%',
+    }}
+    frameBorder={0}
+  />
+</div>
+
+#### Examples
+
+Here you can see some real world examples of responsive snaps:
+
+<SimpleGrid align="center" columns={2} gap={8}>
+  <NextImage
+    href="https://stephenleo.github.io/data-science-blog/data-science-blog/python/pandas.html"
+    src="/images/docs/embedding/example3.png"
+    alt="Stephen Leo's Data Science Blog"
+    width={400}
+    height={255}
+  />
+  <NextImage
+    href="/blog/static-vs-accessible-code-snippets#accessible-code-snippets"
+    src="/images/docs/embedding/example2.png"
+    alt="snappify Blog Post"
+    width={400}
+    height={242}
+  />
+</SimpleGrid>
+
+_Do you have embedded snaps on your website? <CrispLink>Send them to us</CrispLink>, we'd love to add them to our examples!_
+
+### Fixed Size Snaps
+
+Here you can see the same snap as above, but in the non-responsive mode so it won't be scaled down automatically. It will preserve its size and the user can scroll to view the full snap on smaller screens.
+
+<div
+  style={{
+    overflow: 'hidden',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    borderRadius: '10px',
+    width: '100%',
+    maxWidth: '530px',
+    position: 'relative',
+  }}
+>
+  <LazyIframe
+    width={530}
+    height={371}
+    title="Code snippet - Favicon as PNG"
+    src="/embed/cf512284-fed8-40ec-9305-c5699210d35e"
+    allow="clipboard-write"
+    style={{ background: 'linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)' }}
+    frameBorder={0}
+  />
+</div>
+
+#### Examples
+
+Here's a real world example of fixed snaps. The user created two versions (mobile and desktop) and displays them accordingly, depending on the screen size:
+
+<NextImage
+  href="https://raster.ly/tutorials/pixel-grid-in-p5js"
+  src="/images/docs/embedding/example1.png"
+  alt="Rasterly Blog Post"
+  width={400}
+  height={242}
+/>
+
+### Autoplay
+
+When you have multiple slides on your snap, you can use this option to automatically play through all slides.
+
+### Show play button 
+
+This option will be only visible when you want to embed all slides of your snap and is active by default. 
+It will show a play button on the embedded snap so that the user can start the slides presentation.
+
+By disabling this option the slides presentation will start automatically when the user opens the website.
+
+## Embedding single slides
+
+When you want to embed a single slide of your snap, you can do so by selecting the slide number in the dropdown beside the copy button.
+
+<Blockquote type="info">
+  **Note:** Single slide embeds don't support animations
+</Blockquote>
+

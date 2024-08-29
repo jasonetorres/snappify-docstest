@@ -1,0 +1,107 @@
+---
+title: 'Getting Started'
+metaTitle: 'Sharing & Embedding'
+description: 'Share your code snippets or embed them via an iframe or on platforms like Hashnode, Medium or Notion'
+---
+
+# Sharing and embedding snaps
+
+When you're creating technical infographics using snappify, of course you'd like to share them afterwards. You can just export them as an image to share it on Social Media, but sometimes you'd like to share them in an accessible way, so that your viewers can easily copy the code or other texts.
+
+snappify offers you two options:
+
+- Share them via a [Public URL](/view/bcc54061-6e8f-44c5-a4f4-1abcad520108)
+- Embed them on your own website / blog
+
+Let's take a look at how we can achieve that and the Settings we're able to configure 👇
+
+## Sharing
+
+On the snappify Editor you'll see a Share button which opens up the modal to share and embed your snaps. There you see the Public URL which can also be copied easily. As soon as you copy the URL, the snap will be published automatically. Sharing URLs of unpublished snap will lead to a 404 page.
+
+On the modal you can also find some Settings to better describe what your snap is about. Take a look at the [FAQs](#frequently-asked-questions) to better understand why it's import to provide descriptive information when sharing or embedding your snap.
+
+<NextImage
+  src="/images/docs/embedding/modal.png"
+  width={1830}
+  height={1082}
+  alt="Screenshot of the Share / Embed modal"
+/>
+
+### OpenGraph Image
+
+The OG Image acts as a preview image (or thumbnail), when sharing your snap on Social Media or other platforms via its public URL.
+
+After initially publishing your snaps the OG image will be generated automatically from the first Slide. You can regenerate it manually with your preferred Slide number.
+
+## Embedding
+
+Snappify also enables you to embed your snaps in an interactive way on your blog or in your technical documentation, so that users can easily copy the code.
+
+You can either embed them via an iframe on your own website, or on one of our supported platforms. Choose your desired embedding platform:
+
+<Flex width="100%" justify="center">
+  <SimpleGrid columns={[1, 1, 2]} gridGap={[5, 5, 5, 10]} width={['100%', '100%', '100%', '90%', '75%']}>
+    <Card
+      href="/docs/embedding/platforms/iframe"
+      bg="white"
+      color="gray.700"
+      caption="iframe"
+      aria-label="Link to the iframe embedding docs"
+    >
+      <Flex justify="center">
+        <TbCode fontSize="100px" color="inherit" />
+      </Flex>
+    </Card>
+    <Card
+      href="/docs/embedding/platforms/hashnode"
+      bg="white"
+      color="gray.700"
+      caption="Hashnode"
+      aria-label="Link to the Hashnode embedding docs"
+    >
+      <NextImage src="/images/docs/embedding/hashnode.png" alt="Hashnode Logo" width={100} height={100} hideCaption />
+    </Card>
+    <Card
+      href="/docs/embedding/platforms/medium"
+      bg="white"
+      color="gray.700"
+      caption="Medium"
+      aria-label="Link to the Medium embedding docs"
+    >
+      <NextImage src="/images/docs/embedding/medium.png" alt="Medium Logo" width={100} height={100} hideCaption />
+    </Card>
+    <Card
+      href="/docs/embedding/platforms/notion"
+      bg="white"
+      color="gray.700"
+      caption="Notion"
+      aria-label="Link to the Notion embedding docs"
+    >
+      <NextImage src="/images/landing-page/notion-logo.png" alt="Notion Logo" width={100} height={100} hideCaption />
+    </Card>
+  </SimpleGrid>
+</Flex>
+
+## Frequently asked questions
+
+<Faq>
+  <FaqQuestion name="Why should I provide a title and description?">
+    The title and description are used for SEO purposes. They are also used to provide a better user experience when sharing your code snippets on social media.
+  </FaqQuestion>
+  <FaqQuestion name={'What do you mean by "fully accessible snap"?'}>
+    The snap you are sharing either with a public URL or embedding as an iframe is not an image or a canvas render. It is 100% HTML based and all your text contents (like code-snippets or rich-texts) are fully accessible to the user. It means they can copy the text/code.
+  </FaqQuestion>
+  <FaqQuestion name="Why don't my changes appear on the shared snap?">
+    The shared snaps are being cached for 60 seconds so it can take a little bit for your changes to appear.
+  </FaqQuestion>
+  <FaqQuestion name="What is the SEO impact when I embed a snap via iframe?">
+    There is no bad impact if you embed an iframe code snippet. Instead, you can improve the User Experience of your users, since the embedded content is fully accessible, the users can copy the code or text. This is definitely better than just having an image of your code snippet. Plus you have much more possibilities to annotate your code so it looks more appealing.
+    
+    <br/>
+    **Pro tip** 💡: If you care about SEO then write a proper title and description. The iframe tag supports a ‘title’ attribute. We automatically set the description you’re providing to this field.
+  </FaqQuestion>
+  <FaqQuestion name="What is a responsive embedded snap?">
+    By default, the embedded snap will detect the available width of the iframe on the page and will resize the snap accordingly by keeping the aspect ratio of your snap.
+  </FaqQuestion>
+</Faq>

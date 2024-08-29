@@ -1,0 +1,113 @@
+---
+title: 'Code Editor'
+description: 'Get to know the animation options for the code editor element.'
+---
+
+# Code Editor Animation options
+
+Here we'll discuss the different animation options available for the Code Editor element. Be sure to also have a look at the [Animation Basics](/docs/slides/animations/basics) to learn more about our general Entry, Exit and Change animations.
+
+In order to learn about other design options for the Code Editor element, head over to the [dedicated Docs page](/docs/editor/elements/code-editor).
+
+<Box minH={[4, 8]} />
+
+---
+
+After selecting a Code Editor element on the Editor, you'll find the animation options on the **Animation** tab of the right toolbar.
+
+## Code Change Transitions
+
+snappify provides you different Transition types to animate code changes between Slides. This can be useful for providing step-by-step explanations of your code as well as visualizing refactorings.
+
+### Transition Types
+
+Let's have a look at the different transition types for code changes:
+
+#### FadeIn
+
+With this transition type, new code changes will fade in and code which doesn't exist anymore will disappear gradually.
+
+<Box maxW="500px" mx="auto">
+  <Video
+    file="/docs/slides/code-editor/code-fade-in.mp4"
+    width={1160}
+    height={850}
+    alt="Video showcasing the FadeIn transition"
+  />
+</Box>
+
+#### SlideIn
+
+This transition type listens to whole line changes. Changed and new lines will slide in from the right and the old lines will slide out to the left.
+
+<Box maxW="500px" mx="auto">
+  <Video
+    file="/docs/slides/code-editor/code-slide-in.mp4"
+    width={1160}
+    height={850}
+    alt="Video showing the SlideIn transition"
+  />
+</Box>
+
+#### Morph
+
+This transition type can be used to visualize refactorings. It will morph the old code into the new code, moving keywords and identifiers to their new position.
+
+<Box maxW="500px" mx="auto">
+  <Video
+    file="/docs/slides/code-editor/code-morph.mp4"
+    width={1160}
+    height={952}
+    alt="Video showcasing the Morph Transition"
+  />
+</Box>
+
+#### TypeWriter
+
+The TypeWriter effect will type out the code, character by character.
+
+<Box maxW="500px" mx="auto">
+  <Video
+    file="/docs/slides/code-editor/code-type-writer.mp4"
+    width={1160}
+    height={850}
+    alt="Video showcasing the TypeWriter transition"
+  />
+</Box>
+
+#### None
+
+Of course you can also disable the animation completely. By choosing the Transition type **None**, the code will simply change without any animation.
+
+### Duration & Delay
+
+Per default, code changes will start playing together with the transition of the corresponding Code Editor element and the animation will also have the same duration.
+
+If you want to change that, you also have the option to set a custom duration and delay for the code change animation.
+
+
+<Box maxW="350px" mx="auto">
+  <NextImage
+    src="/images/docs/slides/code-change-transition.png"
+    width={510}
+    height={314}
+    alt="Screenshot of the Code Change Transition options"
+  />
+</Box>
+
+#### Auto Duration
+
+With Auto Duration enabled, the duration of the code change will be the same as for the parent element. Except for the TypeWriter effect, there you also have to define the duration per character.
+
+#### Auto Delay
+
+With Auto Delay enabled, the code change transition will wait for the Code Editor element to finish its transition before starting to play, like you can see in the video below.
+
+<Box maxW="500px" mx="auto">
+  <Video
+    file="https://cdn.snappi.fyi/code-change-delay.mp4"
+    width={892}
+    height={628}
+    alt="Video showcasing the Code Change Transition delay"
+  />
+</Box>

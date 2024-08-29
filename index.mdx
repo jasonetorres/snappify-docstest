@@ -1,0 +1,124 @@
+---
+title: 'Introduction 👋'
+---
+
+# Welcome to our Documentation! 👋
+
+<Flex align="flex-start" gridGap={8} direction={['column', 'column', 'row']} align="center" pb={[0,0,6]}>
+    <Flex flexShrink={0} align="center" justify="center" background="green.50" p={4} boxShadow="lg" borderRadius="20px" border="1px solid" borderColor="green.500" width={["80%", "80%", "35%", "40%"]}>
+        <NextImage
+            src="/images/docs/book.png"
+            alt="Illustration of a book"
+            width={150}
+            height={176}
+            hideCaption
+        />
+    </Flex>
+    <Box alignSelf="flex-start" mt={[6,6,0]} sx={{ '> p:not(:first-child)': {mt:6} }}> 
+      Our docs give you an overview of our features, so you're able to use all the **powerful functionalities** in _no
+      time_. 💪
+
+      Although we strive to document all the functionalities thoroughly, please don't hesitate to <CrispLink>reach out to us</CrispLink> if you have any questions.
+    </Box>
+
+</Flex>
+
+The documentation is structured into five sections:
+
+- **Dashboard** - gives you an overview how snappify helps you to organize your code snippets in one place
+- **Slides** - explains how you can create interactive Presentations and smoothly animated Videos with snappify
+- **The Editor** - where we explain the ins and outs of our powerful design tool
+- **Embedding** - explains how you can embed interactive code explanations via iframe or on platforms like Hashnode or Notion
+- **Snappify API** - to show you how to automate the process of creating beautiful code screenshots
+- **Integrations** - contains documentation about 3rd party integrations to boost your workflow
+
+---
+
+<Flex p={4} width="100%">
+  <SimpleGrid columns={[1, 1, 2]} gridGap={10} width="100%">
+    <Card
+      href="/docs/dashboard"
+      bg="linear-gradient(145deg, #30cfd0 0%, #330867 100%)"
+      caption="Dashboard"
+      aria-label="Link to the Dashboard section"
+    >
+      <NextImage src="/images/docs/light.png" alt="Illustration of a lamp" width={100} height={132} hideCaption />
+    </Card>
+    <Card
+      href="/docs/slides"
+      bg="linear-gradient(45deg, rgb(225, 79, 173), rgb(249, 212, 35))"
+      caption="Slides"
+      aria-label="Link to the Slides section"
+    >
+      <Box mt={[0, 0, 4]}>
+        <Box m="-55px">
+          <NextImage
+            src="/images/docs/certificate.png"
+            alt="Illustration of a Certificate"
+            width={240}
+            height={240}
+            hideCaption
+          />
+        </Box>
+      </Box>
+    </Card>
+    <Card
+      href="/docs/editor"
+      bg="linear-gradient(355deg, #1c5e65, #53c594)"
+      caption="Editor"
+      aria-label="Link to the Editor section"
+    >
+      <Box mt={[0, 0, 4]}>
+        <NextImage
+          src="/images/docs/puzzle_dice.png"
+          alt="Illustration of a Puzzle Dice"
+          width={110}
+          height={98}
+          hideCaption
+        />
+      </Box>
+    </Card>
+    <Card
+      href="/docs/embedding"
+      bg="linear-gradient(337deg, #654ea3, #da98b4)"
+      caption="Embedding"
+      aria-label="Link to the Embedding section"
+    >
+      <Box mt={[0, 0, 4]}>
+        <Box m="-55px">
+          <NextImage
+            src="/images/docs/box.png"
+            alt="Illustration of a Box Opening"
+            width={240}
+            height={240}
+            hideCaption
+          />
+        </Box>
+      </Box>
+    </Card>
+    <Card
+      href="/docs/api"
+      bg="linear-gradient(55deg, #8a2387, #e94057, #f27121)"
+      caption="API"
+      aria-label="Link to the API section"
+    >
+      <Box mt={[0, 0, 4]}>
+        <NextImage
+          src="/images/docs/fingerprint.png"
+          alt="Illustration of a Fingerprint Device"
+          width={130}
+          height={131}
+          hideCaption
+        />
+      </Box>
+    </Card>
+    <Card
+      href="/docs/integrations"
+      bg="linear-gradient(90deg, rgb(10, 207, 254), rgb(73, 90, 255))"
+      caption="Integrations"
+      aria-label="Link to the Integrations section"
+    >
+      <NextImage src="/images/docs/time.png" alt="Illustration of an hourglass" width={155} height={144} hideCaption />
+    </Card>
+  </SimpleGrid>
+</Flex>
